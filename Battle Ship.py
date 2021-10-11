@@ -90,26 +90,19 @@ class grid():
                     if self.grid[position1 - 1][position2 -1] == "A": 
                         return True, "There is already a ship here!"
                     elif self.grid[position1 - 1][position2 -1] == "X": 
-                        # found_space.append[1]
                         return True, "There is already a ship here!"
                     elif self.grid[position1 - 1][position2 -1] == "Y": 
-                        # found_space.append[1]
                         return True, "There is already a ship here!"
                     elif self.grid[position1 - 1][position2 -1] == "Z": 
-                        # found_space.append[1]
                         return True, "There is already a ship here!"
                 else: 
                     if self.grid[position1 - 1][position2 + (i - 1)] == "A":
-                        # found_space.append[1]
                         return True, "There is already a ship here!"
                     elif self.grid[position1 - 1][position2 + (i - 1)] == "X":
-                        # found_space.append[1]
                         return True, "There is already a ship here!"
                     elif self.grid[position1 - 1][position2 + (i - 1)] == "Y":
-                        # found_space.append[1]
                         return True, "There is already a ship here!"
                     elif self.grid[position1 - 1][position2 + (i - 1)] == "Z":
-                        # found_space.append[1]
                         return True, "There is already a ship here!" 
                     
         else:
