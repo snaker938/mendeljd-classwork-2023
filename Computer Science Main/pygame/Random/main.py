@@ -10,7 +10,8 @@
 """
  
 import pygame
- 
+import math
+
 # Define some colors
 PINK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -92,7 +93,13 @@ while not done:
     pygame.draw.rect(screen, (0,0,0), [240, 340, 20, 10], 0)
 
     #Draw Sun
-    pygame.draw.circle(screen, (255,255,0), (x, 65), 65)
+
+
+    t = pygame.time.get_ticks() / 2  % 400 # scale and loop time
+    x = t
+    y = math.cos(t/50.0) * 100 + 100       # scale sine wave
+    y = int(y)                             # needs to be int
+    pygame.draw.circle(screen, (255,255,0), (x, y), 65)
 
    
     
