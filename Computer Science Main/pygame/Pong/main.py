@@ -4,6 +4,7 @@ from ball import Ball
 from paddle import Paddle
 from ball import Ball
 import time
+import random
  
 pygame.init()
  
@@ -71,6 +72,13 @@ while playing:
     # --- Game logic should go here
 
     def reset():
+
+        paddleA.rect.x = 20
+        paddleA.rect.y = 200
+
+        paddleB.rect.x = 670
+        paddleB.rect.y = 200
+
         screen.fill(BLACK)
         pygame.draw.line(screen, WHITE, [349, 0], [349, 500], 5)
         all_sprites_list.draw(screen) 
@@ -129,6 +137,7 @@ while playing:
         ball.rect.y = 195
         ball.velocity[0] = -ball.velocity[0]
         reset()
+        time.sleep(0.5)
         create_timer(2)
 
         # pygame.time.delay(3000)
@@ -139,6 +148,7 @@ while playing:
         ball.rect.y = 195
         ball.velocity[0] = -ball.velocity[0]
         reset()
+        time.sleep(0.5)
         create_timer(2)
 
         # pygame.time.delay(3000)
@@ -151,9 +161,10 @@ while playing:
         ball.bounce()
 
     
-    if paddleB.rect.y < ball.rect.y:
+    # opposition paddle AI
+    if paddleB.rect.y + 30 < ball.rect.y:
         paddleB.move_down(5)
-    elif paddleB.rect.y > ball.rect.y:
+    elif paddleB.rect.y  + 30 > ball.rect.y:
         paddleB.move_up(5)
     
  
