@@ -162,12 +162,21 @@ while playing:
 
     
     # opposition paddle AI
-    if paddleB.rect.y + 30 < ball.rect.y:
-        paddleB.move_down(5)
-    elif paddleB.rect.y  + 30 > ball.rect.y:
-        paddleB.move_up(5)
-    
+    # if paddleB.rect.y + 30 < ball.rect.y:
+    #     paddleB.move_down(5)
+    # elif paddleB.rect.y  + 30 > ball.rect.y:
+    #     paddleB.move_up(5)
+
+    # if paddleB.rect.y + random.randint(30, 35) < ball.rect.y:
+    #     paddleB.move_down(7)
+    # elif paddleB.rect.y  + random.randint(30, 35) > ball.rect.y:
+    #     paddleB.move_up(7)
  
+    if paddleB.rect.y + random.randint(20, 43) < ball.rect.y:
+        paddleB.move_down(7)
+    elif paddleB.rect.y  + random.randint(20, 43) > ball.rect.y:
+        paddleB.move_up(7)
+
  
     # --- Drawing code should go here
 
