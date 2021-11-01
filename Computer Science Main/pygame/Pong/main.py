@@ -132,7 +132,15 @@ while playing:
         
     if ball.rect.x>=690:
         scoreA+=1
-        # point = True
+        if scoreA>  9:
+            font = pygame.font.Font(None, 74)
+            text = font.render(str(scoreA), 1, WHITE)
+            screen.blit(text, (250,10))
+            text = font.render(str(scoreB), 1, WHITE)
+            screen.blit(text, (420,10))
+            playing =  False
+            message = f"You win!"
+            break
         ball.rect.x = 345
         ball.rect.y = 195
         ball.velocity[0] = -ball.velocity[0]
@@ -143,7 +151,15 @@ while playing:
         # pygame.time.delay(3000)
     if ball.rect.x<=0:
         scoreB+=1
-        # point = True
+        if scoreB >  9:
+            font = pygame.font.Font(None, 74)
+            text = font.render(str(scoreA), 1, WHITE)
+            screen.blit(text, (250,10))
+            text = font.render(str(scoreB), 1, WHITE)
+            screen.blit(text, (420,10))
+            playing =  False
+            message = f"You lost!"
+            break
         ball.rect.x = 345
         ball.rect.y = 195
         ball.velocity[0] = -ball.velocity[0]
@@ -162,20 +178,20 @@ while playing:
 
     
     # opposition paddle AI
-    # if paddleB.rect.y + 30 < ball.rect.y:
-    #     paddleB.move_down(5)
-    # elif paddleB.rect.y  + 30 > ball.rect.y:
-    #     paddleB.move_up(5)
+    if paddleB.rect.y + 30 < ball.rect.y:
+        paddleB.move_down(6)
+    elif paddleB.rect.y  + 30 > ball.rect.y:
+        paddleB.move_up(6)
 
     # if paddleB.rect.y + random.randint(30, 35) < ball.rect.y:
     #     paddleB.move_down(7)
     # elif paddleB.rect.y  + random.randint(30, 35) > ball.rect.y:
     #     paddleB.move_up(7)
  
-    if paddleB.rect.y + random.randint(20, 43) < ball.rect.y:
-        paddleB.move_down(7)
-    elif paddleB.rect.y  + random.randint(20, 43) > ball.rect.y:
-        paddleB.move_up(7)
+    # if paddleB.rect.y + random.randint(20, 43) < ball.rect.y:
+    #     paddleB.move_down(7)
+    # elif paddleB.rect.y  + random.randint(20, 43) > ball.rect.y:
+    #     paddleB.move_up(7)
 
  
     # --- Drawing code should go here
@@ -207,4 +223,6 @@ while playing:
     clock.tick(60)
  
 #Once we have exited the main program loop we can stop the game engine:
+print(message)
+input("Please enter to continue...")
 pygame.quit()
