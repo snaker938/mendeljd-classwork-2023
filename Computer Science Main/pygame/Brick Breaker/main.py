@@ -17,7 +17,7 @@ WHITE = (255,255,255)
 size = (550, 700)
 # size = (800, 600)
 screen = pygame.display.set_mode(size)
-pygame.display.set_caption("block Breaker")
+pygame.display.set_caption("Block Breaker")
 
 all_sprites_list = pygame.sprite.Group()
 
@@ -98,7 +98,7 @@ while playing:
 
 
 
-    if ball.rect.x>=540: # 550, from 800 :: 700, from 600
+    if ball.rect.x>=540: 
         ball.velocity[0] = -ball.velocity[0]
     if ball.rect.x<=0:
         ball.velocity[0] = -ball.velocity[0]
